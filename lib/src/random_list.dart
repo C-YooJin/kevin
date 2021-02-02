@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:kevin/src/saved.dart';
 
 // 상태가 변하는 위젯
 class RandomList extends StatefulWidget {
@@ -16,7 +17,17 @@ class _RandomListState extends State<RandomList> {
     final randomWord = WordPair.random();
     return Scaffold(
       appBar: AppBar(
-        title: Text("naming app"),
+          title: Text("naming app"),
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.list),
+              onPressed: () {
+                Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => SavedList(saved: _saved))
+                );
+              },
+            )
+          ]
       ),
       body: _buildList(),
     );
@@ -49,7 +60,7 @@ class _RandomListState extends State<RandomList> {
         textScaleFactor: 1.5,
       ),
       trailing: Icon(
-        alreadySaved? Icons.favorite: Icons.favorite_border,
+        alreadySaved ? Icons.favorite : Icons.favorite_border,
         color: Colors.pink,
       ),
       onTap: () {
