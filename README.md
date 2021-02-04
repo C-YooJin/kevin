@@ -1,4 +1,6 @@
 # kevin
+
+영어 단어 조합이 random하게 PascalCase로 생성되고, 선택 or 선택해제에 따라 리스트로 볼 수 있는 어플리케이션
  
 [![동영상](https://user-images.githubusercontent.com/30011635/106622702-3656a280-65b7-11eb-988b-41ea52aed103.png)](https://youtu.be/MoOQtpqZnSM)
 
